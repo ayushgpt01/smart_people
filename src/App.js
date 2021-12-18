@@ -27,7 +27,7 @@ const params = {
   interactivity: {
     events: {
       onHover: {
-        enable: true,
+        enable: false,
         mode: "repulse",
       },
       resize: true,
@@ -67,7 +67,7 @@ const params = {
       enable: true,
       outMode: "bounce",
       random: false,
-      speed: 6,
+      speed: 3,
       straight: false,
     },
     number: {
@@ -175,7 +175,7 @@ class App extends Component {
   render() {
     const { isSignedIn, imageURL, route, box ,user} = this.state;
     return (
-      <div className="App pt2">
+      <div className="App pa2">
         <Particles
           className="particles"
           id="tsparticles"
@@ -183,10 +183,10 @@ class App extends Component {
           loaded={particlesLoaded}
           options={params}
         />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        <Navigation className="mw5" isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
         { route ==='home' 
         ?  <div>
-        <Logo />
+        <Logo className="mw5"/>
         <Rank name={user.name} entries={user.entries}/>
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
         <FaceRecognition box={box} imageURL={imageURL}/>
