@@ -7,16 +7,11 @@ import Signin from "./Component/Signin/Signin";
 import Register from "./Component/Register/Register"
 import FaceRecognition from "./Component/FaceRecognition/FaceRecognition"
 import Particles from "react-tsparticles";
-import Clarifai from "clarifai";
 import "./App.css";
 
 const particlesInit = (main) => {
   console.log(main);
 };
-
-const app = new Clarifai.App({
-  apiKey: '1fabd297ff474907933ebdd8d4498bcc'
- });
 
 const particlesLoaded = (container) => {
   console.log(container);
@@ -91,23 +86,25 @@ const params = {
   detectRetina: true,
 };
 
+const initialState = {
+  input: '',
+  imageURL: '',
+  box: {},
+  route: 'signin',
+  isSignedIn : false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: ''
+  }
+}
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: '',
-      imageURL: '',
-      box: {},
-      route: 'signin',
-      isSignedIn : false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -144,7 +141,14 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input})
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+    fetch('http://localhost:3000/imageurl/', {
+          method: 'post',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            input: this.state.input,
+          })
+        })
+        .then(response => response.json())
     .then(response => {
       if(response) {
         fetch('http://localhost:3000/image/', {
@@ -157,6 +161,7 @@ class App extends Component {
         .then(count => {
           this.setState(Object.assign(this.state.user,{entries: count}));
         })
+        .catch(console.log)
       }
       this.displayFaceBox(this.calculateFaceLocation(response))
     })
@@ -165,7 +170,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === 'signin') {
-      this.setState({isSignedIn: false});
+      this.setState(initialState);
     } else if(route ==='home') {
       this.setState({isSignedIn: true});
     }
