@@ -183,10 +183,12 @@ class App extends Component {
           loaded={particlesLoaded}
           options={params}
         />
+        <div className="flex justify-between">
+        <Logo className="mw5"/>
         <Navigation className="mw5" isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+        </div>
         { route ==='home' 
         ?  <div>
-        <Logo className="mw5"/>
         <Rank name={user.name} entries={user.entries}/>
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
         <FaceRecognition box={box} imageURL={imageURL}/>
