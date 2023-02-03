@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Smart People
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Smart People is a web application that allows users to upload a photo or provide a URL and find human faces in the image using the Clarifai API. The application is built using ReactJS for the front-end, ExpressJS for the back-end, and PostgreSQL for the database.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before you get started, you will need to have the following software installed on your system:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-   NodeJS
+-   npm
+-   PostgreSQL
 
-### `npm test`
+### Installing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to get the development environment running:
 
-### `npm run build`
+1.  Clone the repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bashCopy code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`git clone https://github.com/ayushgpt01/smart_people.git` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  Change into the directory:
 
-### `npm run eject`
+bashCopy code
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`cd smart_people` 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  Install the dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Copy code
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`npm install` 
 
-## Learn More
+4.  Create a PostgreSQL database for the application.
+    
+5.  Create a `.env` file in the root of the project and add the following environment variables:
+    
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cssCopy code
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`DATABASE_URL=[Your database URL]
+CLARIFAI_API_KEY=[Your Clarifai API Key]` 
 
-### Code Splitting
+6.  Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Copy code
 
-### Analyzing the Bundle Size
+`npm run dev` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The app will now be running at [http://localhost:3000/](http://localhost:3000/).
 
-### Making a Progressive Web App
+## Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-   [ReactJS](https://reactjs.org/) - JavaScript library for building user interfaces
+-   [ExpressJS](https://expressjs.com/) - Node.js web application framework
+-   [PostgreSQL](https://www.postgresql.org/) - Object-relational database management system
+-   [Clarifai API](https://www.clarifai.com/) - API for image recognition and analysis
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-   [Ayush Gupta](https://github.com/ayushgpt01)
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE.md](https://chat.openai.com/LICENSE.md) file for details.
