@@ -30,28 +30,7 @@ git clone https://github.com/ayushgpt01/smart_people.git
  cd smart_people
 ```
 
-3.  Install the dependencies:
-
-```bash
-npm install
-```
-
-Create a PostgreSQL database for the application.
-
-Create a `.env` file in the root of the project and add the following environment variables:
-
-cssCopy code
-
-`DATABASE_URL=[Your database URL]
-CLARIFAI_API_KEY=[Your Clarifai API Key]`
-
-6.  Start the development server:
-
-Copy code
-
-`npm run dev`
-
-The app will now be running at [http://localhost:3000/](http://localhost:3000/).
+3. Create a PostgreSQL database for the application.
 
 ## Built With
 
